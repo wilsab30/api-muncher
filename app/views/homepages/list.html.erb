@@ -1,2 +1,10 @@
-<h1>Homepages#list</h1>
-<p>Find me in app/views/homepages/list.html.erb</p>
+<h1>Recipes</h1>
+<section>
+<% @data.each do |data|%>
+<article id ="recipe">
+<%= data.label %>
+<%= image_tag data.image %>
+<%= link_to "Recipe", data.uri %>
+</article>
+</section>
+<%end%>

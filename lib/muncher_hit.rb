@@ -1,9 +1,11 @@
 class MuncherHit
-  attr_reader :recipe, :bookmark, :bought
+  attr_reader :label, :image, :uri
 
-  def initialize(recipe, bookmark, bought)
-    @reciepe = recipe
-    @bookmark = bookmark
-    @bought = bought
+  def initialize(label, image, uri)
+    @label = label
+    @image = image
+    @uri = uri
   end
+
+
 end

@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  root to: search
-  
-  get 'homepages/search' => 'homepages#search', as: 'search'
+  root to:'homepages#search'
+get 'homepages/search' => 'homepages#search'
+  post 'homepages/search' => 'homepages#search', as: 'search'
 
-  get 'homepages/list'
+get 'homepages/list' => 'homepages#list'
+  post 'homepages/list' => 'homepages#list', as:'list'
 
-  get 'homepages/show'
+  get 'homepages/show' => 'homepages#show', as:'show'
 
 
 
