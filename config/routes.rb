@@ -7,7 +7,7 @@ get 'homepages/search' => 'homepages#search'
 get 'homepages/list' => 'homepages#list'
   post 'homepages/list' => 'homepages#list', as:'list'
 
-  get 'homepages/show' => 'homepages#show', as:'show'
+  get 'homepages/*uri' => 'homepages#show', as:'show', format: false
 
 
 

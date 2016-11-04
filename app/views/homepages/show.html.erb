@@ -1,2 +1,24 @@
-<h1>Homepages#show</h1>
-<p>Find me in app/views/homepages/show.html.erb</p>
+<h1>Recipe</h1>
+<section class="small-12 column">
+
+
+
+<article id ="recipe">
+  <div class="grid-block">
+  <div class="small-12 medium-6 grid-content">
+<h3><%= @recipe.first["label"]%></h3>
+<%= image_tag @recipe.first["image"], size: "160x160"%>
+<p><% @recipe.first["ingredientLines"].each do |line|%></p>
+<ul>
+<li><%= line %></li>
+</ul>
+<%end%>
+<p>calories: <%= @recipe.first["calories"]%></p>
+<p><%= @recipe.first["FAT"]%></p>
+<p><%= link_to("Recipe", @recipe.first["url"]) %></p>
+</div>
+</div>
+
+</article>
+
+</section>

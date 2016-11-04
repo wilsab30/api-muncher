@@ -12,9 +12,10 @@ class HomepagesController < ApplicationController
 
   def list
     @data = ApiMuncherWrapper.search(params[:search])
-    # raise
+
   end
 
   def show
+    @recipe = ApiMuncherWrapper.show_details(params[:uri])
   end
 end

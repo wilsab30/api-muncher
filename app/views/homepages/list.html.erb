@@ -1,10 +1,17 @@
 <h1>Recipes</h1>
-<section>
+<section class="small-12 column">
+
 <% @data.each do |data|%>
+
 <article id ="recipe">
+  <div class="grid-block">
+  <div class="small-12 medium-6 grid-content">
+<%= image_tag data.image, size: "80x80"%>
 <%= data.label %>
-<%= image_tag data.image %>
-<%= link_to "Recipe", data.uri %>
-</article>
-</section>
+<%= link_to("Recipe", show_path(data.uri)) %>
+</div>
+</div>
 <%end%>
+</article>
+
+</section>

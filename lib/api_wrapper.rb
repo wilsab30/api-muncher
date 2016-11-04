@@ -1,4 +1,5 @@
 require 'httparty'
+require 'uri'
 
 class ApiMuncherWrapper
 
@@ -17,12 +18,20 @@ class ApiMuncherWrapper
         wrapper = MuncherHit.new hit["recipe"]["label"], hit["recipe"]["image"], hit["recipe"]["uri"]
         hits << wrapper
       end
+
       return hits
     else
       return nil
     end
   end
 
+
+
+  def self.show_details(uri)
+    uri = URI.escape(uri)
+    url = BASE_URL + "/search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&r=#{uri}"
+    data = HTTParty.get(url)
+  end
 end
 
 
