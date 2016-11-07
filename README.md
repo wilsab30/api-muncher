@@ -1,4 +1,4 @@
-# Refelctions
+# Reflections
 
 I have a better understanding of how data from an app can be used to provide data for my application. Which is great becasue I'm going to need this when capstone time comes around.
 I'd like more practice building test as testing was the last thing I worked on.
