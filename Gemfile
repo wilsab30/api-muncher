@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
-gem 'foundation-rails'
+# gem 'foundation-rails'
 gem 'httparty'
 gem 'pry'
-gem 'will_paginate', '~> 3.1'
+gem 'kaminari'
+gem 'api-pagination'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
@@ -39,6 +40,8 @@ group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
   gem 'better_errors'
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do

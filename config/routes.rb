@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
   root to:'homepages#search'
-get 'homepages/search' => 'homepages#search'
+  get 'homepages/search' => 'homepages#search'
   post 'homepages/search' => 'homepages#search', as: 'search'
 
-get 'homepages/list' => 'homepages#list'
+  get 'homepages/list' => 'homepages#list'
   post 'homepages/list' => 'homepages#list', as:'list'
 
   get 'homepages/*uri' => 'homepages#show', as:'show', format: false
-
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

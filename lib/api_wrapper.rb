@@ -9,14 +9,20 @@ class ApiMuncherWrapper
  BASE_URL = "https://api.edamam.com"
 
   def self.search(term)
-      url = BASE_URL + "/search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{term}"
+    puts "term = #{term}"
+
+
+      url = BASE_URL + "/search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=fish&to=100"
 
       data = HTTParty.get(url)
       hits = []
+    
+
       if data["hits"]
       data["hits"].each do |hit|
         wrapper = MuncherHit.new hit["recipe"]["label"], hit["recipe"]["image"], hit["recipe"]["uri"]
         hits << wrapper
+
       end
 
       return hits

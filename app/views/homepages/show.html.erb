@@ -1,24 +1,33 @@
-<h1>Recipe</h1>
 <section class="small-12 column">
+  <h1 class="list"><%= @recipe.first["label"]%></h1>
 
 
+  <article>
+    <div class="grid-block">
+    <div class="small-12 medium-6 grid-content">
+      <h2 class="center">ingredients</h2>
+    <%= image_tag @recipe.first["image"], size: "200x200", id:"show"%>
+    <p><% @recipe.first["ingredientLines"].each do |line|%></p>
 
-<article id ="recipe">
-  <div class="grid-block">
-  <div class="small-12 medium-6 grid-content">
-<h3><%= @recipe.first["label"]%></h3>
-<%= image_tag @recipe.first["image"], size: "160x160"%>
-<p><% @recipe.first["ingredientLines"].each do |line|%></p>
-<ul>
-<li><%= line %></li>
-</ul>
-<%end%>
-<p>calories: <%= @recipe.first["calories"]%></p>
-<p><%= @recipe.first["FAT"]%></p>
-<p><%= link_to("Recipe", @recipe.first["url"]) %></p>
-</div>
-</div>
+  <ul>
+    <li class="lines"><%= line %></li>
+  </ul>
 
-</article>
+  <%end%>
+  </div>
+  </div>
 
-</section>
+  </article>
+
+  </section>
+  <script>
+  function goBack() {
+      window.history.back();
+  }
+  </script>
+    <div id="show-rec">
+    <p><%= link_to("Recipe", @recipe.first["url"]) %></p>
+    <p> calories: <%= @recipe.first["calories"].round%></p>
+    <button onclick="goBack()">Go Back</button>
+
+  </div>

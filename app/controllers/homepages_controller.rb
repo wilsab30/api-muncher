@@ -11,7 +11,7 @@ class HomepagesController < ApplicationController
 
 
   def list
-    @data = ApiMuncherWrapper.search(params[:search])
+    @data = paginate ApiMuncherWrapper.search(params[:search]), per_page: 10
 
   end
 
